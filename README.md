@@ -1,4 +1,6 @@
 # trialfund
+## 说明
+vue 3.0 空项目
 
 ## Project setup
 ```
