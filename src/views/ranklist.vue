@@ -1,7 +1,7 @@
 <template>
  <div class="m-ranklist">
     <div class="title">赛季排名</div>
-    <div v-for="item in ranklist" class="item">
+    <div v-for="item in ranklist" class="item" :key="item.id">
       <router-link :to="{name:'rank',params:{id:item.id}}" >
         <div class="name">
          {{item.name}}赛季<span>{{item.range}}</span>
@@ -9,9 +9,7 @@
         <div class="btn">点击查看</div>
       </router-link>
     </div>
-     
-    
- 
+
 </div>
 </template>
 
@@ -21,11 +19,11 @@ export default {
   name: 'ranklist',
   data () {
     return {
-      ranklist:[]
+      ranklist: []
     }
   },
-  mounted:function () {
-    this.ranklist=[{id:1,"name":" 五月","range":"2021.05.10-2021.6.10"},{id:2,"name":" 六月","range":"2021.06.10-2021.07.10"}];
+  mounted: function () {
+    this.ranklist = [{ id: 1, name: ' 五月', range: '2021.05.10-2021.6.10' }, { id: 2, name: ' 六月', range: '2021.06.10-2021.07.10' }]
   },
   methods: {
 
@@ -33,8 +31,7 @@ export default {
 }
 </script>
 <style>
-	body,#app{background: #fff;}
-	.m-ranklist{width:100%;}
+  body,#app{background: #fff;}.m-ranklist{width:100%;}
   body,#app{background:linear-gradient(to bottom,#ef6667,#e64a4b);}
   .m-ranklist{position: relative;z-index:10; width:100%;margin:0 auto; background: url(../assets/bg2.jpg)  center 0 no-repeat;background-size:100%;}
   .m-ranklist .title{padding:1.4rem 0 0.8rem 0.4rem;font-size: 0.74rem;color: #ffffff;line-height: 1;}

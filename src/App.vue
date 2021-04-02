@@ -1,8 +1,8 @@
 <template>
-  <div id="app">  
-   <transition name="slide-fade">  
-    	<router-view/>
-	</transition>
+  <div id="app">
+   <transition name="slide-fade">
+     <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -32,8 +32,6 @@ i{ font-style:normal;}
 .u-btn.flat{background: #e64a4b;}
 
 .m-act{width: 7.5rem;}
-
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 1s ease;
@@ -41,7 +39,7 @@ i{ font-style:normal;}
 
 .fade-enter-from,
 .fade-leave-to {
-  opacity: 0;
+   opacity: 0;
 }
 
 .slide-fade{
@@ -51,21 +49,38 @@ i{ font-style:normal;}
 .slide-fade-enter, .slide-fade-leave-to
 {
   left:0;top: 0;right: 0;
-  position: fixed;
-  transform:translateX(-10px)  scale(0.1);
+  position: fixed;width:100%;
+  transform:translateX(-60px)  scale(0.1);
   opacity:1;
 }
-.slide-fade-enter-active { 
-  opacity: 0;transition: all 0.3s ease; 
+.slide-fade-enter-active {
+  opacity: 0;transition: all 0.4s ease;
 }
 .slide-fade-leave-active {
   opacity: 0;
-  transition: all 0.3s ease; 
-  transform:translateX(10px)  scale(1) ;
+  transition: all 0.4s ease;
+  transform:translateX(60px)  scale(1) ;
 }
 
+/***弹窗相关*/
+.m-dlg{display: flex;-webkit-box-align: center;align-items: center;-webkit-box-pack: center;justify-content: center;position:fixed; top:0; left:0; width:100%; z-index:1600;height:100%; background: rgba(0,0,0,0.7);  }
+  .m-dlg>div{position: relative; text-align: center;width:5.5rem;border-radius: 0.2rem; position: relative;transition: all 0.4s ease-in-out; background: linear-gradient(to bottom,#ffecca,#ffffff) ;}
+  .m-dlg>div:after{content:"";position: absolute;width:4.16rem;height:0.86rem;background: url(assets/dlg_b.png) center center no-repeat;background-size:100%;left:0.86rem;top:-0.4rem;z-index:1;}
+  .m-dlg .dlg_title{position: relative;z-index: 2; font-size: 0.46rem;color: #f01b1c;line-height: 1;padding:0.5rem 0 0.3rem;}
+  .m-dlg .dlg_title:after,.m-dlg .dlg_title:before{content:"";position: absolute;}
+  .m-dlg .dlg_title:after{width:3.4rem;height:1px;bottom:0;left:50%;margin-left:-1.7rem; background: linear-gradient(to right,transparent,#ffbf7f,transparent);}
+  .m-dlg .dlg_title:before{width:3px;height:3px;background: #ffbf7f;border-radius: 100%;left:50%;margin-left:-1px;bottom:-1px;}
 
+  .m-dlg .dlg_subtitle{position: relative; margin:0.4rem auto 0.2rem; font-size: 0.32rem;color: #f01b1c;text-align: center;background: linear-gradient(to right,transparent,#ffe9cc,transparent);height:0.68rem;line-height: 0.68rem;}
+  .m-dlg .dlg_subtitle:after,.m-dlg .dlg_subtitle:before{content:"";position: absolute;width:80%;height:1px;left:10%; background: linear-gradient(to right,transparent,#ffbf7f,transparent);}
+  .m-dlg .dlg_subtitle:after{top:0;}.m-dlg .dlg_subtitle:before{bottom: 0;}
 
-
+  .m-dlg .dlg_pack{margin:0.34rem auto 0.24rem;width:4.9rem;box-sizing: border-box;padding:0.3rem 0 0.3rem 2rem;font-size: 0.26rem;color: #f01b1c;background: url(assets/packbg.png) center center no-repeat;background-size:100%;text-align: left;}
+  .m-dlg .dlg_pack>div{font-size: 0.54rem;}
+  .m-dlg .dlg_pack>div span{font-size: 0.34rem;}
+  .m-dlg .u_txt{margin-top:0.24rem;color: #979797;font-size: 0.24rem;text-align: center;}
+  .m-dlg .u_txt i{font-style: normal;color: #f01b1c;}
+  .m-dlg .dlg_btn{width:3.8rem;margin:0.44rem auto 0.54rem; height:0.9rem;font-size: 0.32rem;color: #ffffff;line-height: 0.9rem;text-align: center; background: linear-gradient(to right,#f01a1c,#fc6c7c);border-radius: 0.5rem;}
+  .dlg_closebtn{position: absolute;left:50%;bottom:-1rem;margin-left:-0.28rem; width:0.56rem;height:0.6rem;background:url(assets/x.png) center center no-repeat;background-size:100%; }
 
 </style>

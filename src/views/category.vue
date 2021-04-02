@@ -1,11 +1,11 @@
 <template>
  <div class="m-cate">
     <div class="header">
-    	<div>全部</div>
-    	<div class="active">热销榜</div>
-    	<div>收益榜</div>
-    	<div>性价比</div>
-    	<div>定投榜</div>
+    	<div :class="{active:cur==0}"  @click="cur=0">全部</div>
+    	<div :class="{active:cur==1}"  @click="cur=1">热销榜</div>
+    	<div :class="{active:cur==2}"  @click="cur=2">收益榜</div>
+    	<div :class="{active:cur==3}"  @click="cur=3">性价比</div>
+    	<div :class="{active:cur==4}"  @click="cur=4">定投榜</div>
     </div>
     <div class="tips">此列表仅列出了支持此活动的产品，非银华基金全部产品</div>
     <div class="th"><div>基金名称</div><div>近1周</div><div>近1月</div></div>
@@ -32,10 +32,11 @@
 
 export default {
   name: 'category',
+  
 
   data () {
     return {
-      
+      cur:0
     }
   },
   mounted:function () {

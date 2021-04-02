@@ -1,8 +1,4 @@
 # trialfund
-## 说明
-vue 3.0 单页面空项目
-history 路由模式
-
 
 ## Project setup
 ```

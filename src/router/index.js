@@ -6,6 +6,8 @@ import Cate from '../views/category.vue'
 
 Vue.use(VueRouter)
 
+
+
 const routes = [
   {
     path: '/',
@@ -95,6 +97,7 @@ const routes = [
   },
   {
     path: '/category',
+    name:"category",
     component: Cate,
     meta:{
       title: '基金分类'
